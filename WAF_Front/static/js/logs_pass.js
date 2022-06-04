@@ -1,0 +1,35 @@
+$(function(){
+    $.ajax({
+    url:'/logs/pass/data',
+    type:'POST',
+    dataType:'json',
+    success:function(data){
+        for(i in data){
+            id=data[i]['id'];
+            date=data[i]['date'];
+            ip=data[i]['ip'];
+            port=data[i]['port'];
+            method=data[i]['method'];
+            site=data[i]['site'];
+            url=data[i]['url'];
+            if(data[i]['proxy']){
+                proxy='是';
+            }else{
+                proxy='否';
+            }
+            item1="<td>"+id+"</td>";
+            item2="<td>"+date+"</td>";
+            item3="<td>"+ip+"</td>";
+            item4="<td>"+port+"</td>";
+            item5="<td>"+site+"</td>";
+            item6="<td>"+method+"</td>";
+            item7="<td>"+url+"</td>";
+            item8="<td>"+proxy+"</td>";
+            info="<tr>"+item1+item2+item3+item4+item5+item6+item7+item8+"</tr>"
+            $('#data').append(info);
+
+            console.log(data[i])
+        }
+    }
+    });
+})

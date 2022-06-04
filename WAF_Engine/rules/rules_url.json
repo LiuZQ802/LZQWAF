@@ -1,0 +1,1 @@
+{"id": 2, "regular": "(admin|phpmyadmin|www|wwwroot|root|admin|host)", "type": "敏感目录文件", "description": "敏感目录文件", "status": "off"}

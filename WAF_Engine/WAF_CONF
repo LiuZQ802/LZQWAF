@@ -1,0 +1,18 @@
+[WAF]
+waf_config = True
+real_host = 192.168.109.160
+real_port = 80
+proxy_host = 127.0.0.1
+proxy_port = 80
+service_name = HTTP
+
+[DATABASE]
+database_host = 192.168.109.161
+database_user = root
+database_passwd = 001003
+database_name = waf
+
+[CC]
+minutes = 1
+times = 5
+

@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+        <meta name="description" content="" />
+        <meta name="author" content="" />
+        <title>LZQWAF</title>
+        <link rel="shortcut icon" href="../static/assets/img/tb.ico">
+        <link href="https://cdn.jsdelivr.net/npm/simple-datatables@latest/dist/style.css" rel="stylesheet" />
+        <link href="../static/css/styles.css" rel="stylesheet" />
+        <script src="https://use.fontawesome.com/releases/v6.1.0/js/all.js" crossorigin="anonymous"></script>
+    </head>
+    <body class="sb-nav-fixed">
+        <nav class="sb-topnav navbar navbar-expand navbar-dark bg-dark">
+            <!-- Navbar Brand-->
+            <a class="navbar-brand ps-3" href="/">LZQWAF</a>
+            <!-- Sidebar Toggle-->
+            <button class="btn btn-link btn-sm order-1 order-lg-0 me-4 me-lg-0" id="sidebarToggle" href="#!"><i class="fas fa-bars"></i></button>
+
+        </nav>
+        <div id="layoutSidenav">
+            <div id="layoutSidenav_nav">
+                <nav class="sb-sidenav accordion sb-sidenav-dark" id="sidenavAccordion">
+                    <div class="sb-sidenav-menu">
+                        <div class="nav">
+                            <div class="sb-sidenav-menu-heading">主控面板</div>
+                            <a class="nav-link" href="/">
+                                <div class="sb-nav-link-icon"><i class="fa-solid fa-house"></i></div>
+                                主页
+                            </a>
+                            <div class="sb-sidenav-menu-heading">核心面板</div>
+                            <a class="nav-link collapsed" href="#" data-bs-toggle="collapse" data-bs-target="#collapseLayouts" aria-expanded="false" aria-controls="collapseLayouts">
+                                <div class="sb-nav-link-icon"><i class="fas fa-columns"></i></div>
+                                规则管理
+                                <div class="sb-sidenav-collapse-arrow"><i class="fas fa-angle-down"></i></div>
+                            </a>
+                            <div class="collapse" id="collapseLayouts" aria-labelledby="headingOne" data-bs-parent="#sidenavAccordion">
+                                <nav class="sb-sidenav-menu-nested nav">
+                                    <a class="nav-link" href="/url_rules_manage">URL规则</a>
+                                    <a class="nav-link" href="/get_rules_manage">GET规则</a>
+                                    <a class="nav-link" href="/post_rules_manage">POST规则</a>
+                                </nav>
+                            </div>
+                            <a class="nav-link collapsed" href="#" data-bs-toggle="collapse" data-bs-target="#collapsePages" aria-expanded="false" aria-controls="collapsePages">
+                                <div class="sb-nav-link-icon"><i class="fa-solid fa-chart-line"></i></div>
+                                统计分析
+                                <div class="sb-sidenav-collapse-arrow"><i class="fas fa-angle-down"></i></div>
+                            </a>
+                            <div class="collapse" id="collapsePages" aria-labelledby="headingTwo" data-bs-parent="#sidenavAccordion">
+                                <nav class="sb-sidenav-menu-nested nav">
+                                    <a class="nav-link" href="/rank/attack">攻击源排行</a>
+                                    <a class="nav-link" href="/rank/type">攻击方式排行</a>
+                                    <a class="nav-link" href="/rank/url">URL分析统计</a>
+                                </nav>
+                            </div>
+                             <a class="nav-link collapsed" href="#" data-bs-toggle="collapse" data-bs-target="#jbcz" aria-expanded="false" aria-controls="collapsePages">
+                                <div class="sb-nav-link-icon"><i class="fa-solid fa-bars"></i></div>
+                                基本操作
+                                <div class="sb-sidenav-collapse-arrow"><i class="fas fa-angle-down"></i></div>
+                            </a>
+                            <div class="collapse" id="jbcz" aria-labelledby="headingTwo" data-bs-parent="#sidenavAccordion">
+                                <nav class="sb-sidenav-menu-nested nav">
+                                    <a class="nav-link" href="/ip_prohibit">IP黑名单</a>
+                                    <a class="nav-link" href="/service_set">服务器参数</a>
+                                    <a class="nav-link" href="/database_set">数据库参数</a>
+                                    <a class="nav-link" href="/illegal_ask_set">CC参数</a>
+                                </nav>
+                            </div>
+                            <div class="sb-sidenav-menu-heading">日志查看</div>
+                            <a class="nav-link" href="/logs/pass">
+                                <div class="sb-nav-link-icon"><i class="fa-solid fa-clock"></i></div>
+                                放行日志
+                            </a>
+                            <a class="nav-link" href="/logs/block">
+                                <div class="sb-nav-link-icon"><i class="fa-brands fa-hackerrank"></i></div>
+                                拦截日志
+                            </a>
+                             <a class="nav-link" href="/logs/error">
+                                <div class="sb-nav-link-icon"><i class="fa-solid fa-bug"></i></div>
+                                程序错误日志
+                            </a>
+                            <a class="nav-link" href="/logs/user_operate">
+                                <div class="sb-nav-link-icon"><i class="fa-solid fa-user"></i></i></div>
+                                用户操作日志
+                            </a>
+                        </div>
+                    </div>
+
+                </nav>
+            </div>
+            <div id="layoutSidenav_content">
+                <main>
+                    <div class="container-fluid px-4">
+                        <h1 class="mt-4">攻击源排行 </h1>
+                        <div class="card mb-4">
+                            <div class="card-body">
+                                十大攻击源ip.
+                            </div>
+                        </div>
+                        <div class="card mb-4">
+                            <table class="table table-hover table-striped">
+	<caption>十大攻击源</caption>
+	<thead>
+		<tr style="height:50px;vertical-align: middle;" >
+			<th>序号</th>
+			<th>源IP</th>
+			<th>IP地理位置</th>
+            <th>攻击数量</th>
+		</tr>
+	</thead>
+	<tbody>
+        {%for item in lists%}
+		<tr style="height:50px;vertical-align: middle;">
+			<td>{{item['id']}}</td>
+			<td>{{item['ip']}}</td>
+			<td>{{item['site']}}</td>
+            <td>{{item['count']}}</td>
+		</tr>
+        {%endfor%}
+
+	</tbody>
+</table>
+                        </div>
+                    </div>
+                </main>
+                <footer class="py-4 bg-light mt-auto">
+                    <div class="container-fluid px-4">
+                        <div class="d-flex align-items-center justify-content-between small">
+                            <div class="text-muted">LZQWAF &copy; Website 2022</div>
+                            <div>
+                                <a href="#">Privacy Policy</a>
+                                &middot;
+                                <a href="#">Terms &amp; Conditions</a>
+                            </div>
+                        </div>
+                    </div>
+                </footer>
+            </div>
+        </div>
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" crossorigin="anonymous"></script>
+        <script src="../static/js/scripts.js"></script>
+        <script src="https://cdn.jsdelivr.net/npm/simple-datatables@latest" crossorigin="anonymous"></script>
+        <script src="../static/js/datatables-simple-demo.js"></script>
+    </body>
+</html>

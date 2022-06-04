@@ -1,0 +1,10 @@
+{"id": 1, "regular": "(\\'|\\\"|\\||\\(|\\))", "type": "sql注入", "description": "特殊字符", "status": "on"}
+{"id": 2, "regular": "(/|\\\\|\\*|&|\\#)", "type": "sql注入", "description": "特殊字符", "status": "on"}
+{"id": 3, "regular": "(-|\\+|<|>)", "type": "sql注入", "description": "特殊字符", "status": "on"}
+{"id": 4, "regular": "(\\s(union|select|or|and|limit|sleep|benchmark|offset)\\s)", "type": "sql注入", "description": "敏感字符", "status": "on"}
+{"id": 5, "regular": "(\\s(like|rlike|regexp|group|substr|)\\s)", "type": "sql注入", "description": "敏感字符", "status": "on"}
+{"id": 6, "regular": "(image/jpeg|image/png|image/jpg)", "type": "文件上传", "description": "文件类型", "status": "on"}
+{"id": 7, "regular": "(php|htm|jsp|jsw|jsv|jtml|asp|asa|asc|ash|asm|cer|swf|7z)", "type": "文件上传", "description": "文件后缀", "status": "on"}
+{"id": 8, "regular": "(<(.*)script>|<img(.*)>|<input(.*)>)", "type": "xss", "description": "特殊字符", "status": "on"}
+{"id": 9, "regular": "(ipconfig|ifconfig|cat|tac|less|chmod|more)", "type": "命令执行", "description": "敏感字符", "status": "on"}
+{"id": 11, "regular": "(\\||\\&|\\'|\\\"|;|\\$)", "type": "命令执行", "description": "特殊字符", "status": "off"}

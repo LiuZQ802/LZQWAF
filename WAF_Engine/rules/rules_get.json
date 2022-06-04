@@ -1,0 +1,9 @@
+{"id": 1, "regular": "(\\'|\\\"|\\||\\(|\\))", "type": "sql注入", "description": "特殊字符", "status": "on"}
+{"id": 2, "regular": "(/|\\\\|\\*|&)", "type": "sql注入", "description": "特殊字符", "status": "on"}
+{"id": 3, "regular": "(-|\\+|<|>)", "type": "sql注入", "description": "特殊字符", "status": "on"}
+{"id": 4, "regular": "(extractvalue|updatexml)", "type": "sql注入", "description": "报错注入", "status": "on"}
+{"id": 5, "regular": "(\\s(union|select|or|and|limit|sleep|benchmark|offset)\\s)", "type": "sql注入", "description": "敏感字符", "status": "on"}
+{"id": 6, "regular": "(\\s(like|rlike|regexp|group|substr|)\\s)", "type": "sql注入", "description": "敏感字符", "status": "on"}
+{"id": 7, "regular": "(file://|php://|data://)", "type": "文件包含", "description": "伪协议", "status": "on"}
+{"id": 8, "regular": "(phpinfo)", "type": "文件包含", "description": "webshell", "status": "on"}
+{"id": 9, "regular": "(<(.*)script>|<img(.*)>|<input(.*)>)", "type": "xss", "description": "特殊字符", "status": "on"}

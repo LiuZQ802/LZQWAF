@@ -1,0 +1,210 @@
+<!DOCTYPE html>
+<html lang="en">
+ <head>
+        <meta charset="UTF-8" />
+        <title>LZQWAF</title>
+        <link rel="shortcut icon" href="static/assets/img/tb.ico">
+
+
+     <link href="https://cdn.jsdelivr.net/npm/simple-datatables@latest/dist/style.css" rel="stylesheet" />
+        <link href="static/css/styles.css" rel="stylesheet" />
+
+        <script src="https://use.fontawesome.com/releases/v6.1.0/js/all.js" crossorigin="anonymous"></script>
+
+        <script src="https://cdn.bootcss.com/jquery/3.2.1/jquery.min.js"></script>
+        <link href="https://cdn.bootcss.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet">
+        <script src="https://cdn.bootcss.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+
+        <link href="https://cdn.bootcss.com/bootstrap-table/1.11.1/bootstrap-table.min.css" rel="stylesheet">
+        <script src="https://cdn.bootcss.com/bootstrap-table/1.11.1/bootstrap-table.min.js"></script>
+        <script src="https://cdn.bootcss.com/bootstrap-table/1.11.1/locale/bootstrap-table-zh-CN.min.js"></script>
+<!--        bootstrap开关按钮-->
+         <link href="https://cdn.bootcss.com/bootstrap-switch/3.3.4/css/bootstrap3/bootstrap-switch.min.css" rel="stylesheet">
+        <script src="https://cdn.bootcss.com/bootstrap-switch/3.3.4/js/bootstrap-switch.min.js"></script>
+
+
+ </head>
+
+    <body class="sb-nav-fixed">
+
+        <nav class="sb-topnav navbar navbar-expand navbar-dark bg-dark">
+            <!-- Navbar Brand-->
+            <a class="navbar-brand ps-3" href="/">LZQWAF</a>
+            <!-- Sidebar Toggle-->
+            <button class="btn btn-link btn-sm order-1 order-lg-0 me-4 me-lg-0" id="sidebarToggle" href="#!"><i class="fas fa-bars"></i></button>
+
+        </nav>
+
+        <div id="layoutSidenav">
+            <div id="layoutSidenav_nav">
+                <nav class="sb-sidenav accordion sb-sidenav-dark" id="sidenavAccordion">
+                    <div class="sb-sidenav-menu">
+                        <div class="nav">
+                            <div class="sb-sidenav-menu-heading">主控面板</div>
+                            <a class="nav-link" href="/">
+                                <div class="sb-nav-link-icon"><i class="fa-solid fa-house"></i></div>
+                                主页
+                            </a>
+                            <div class="sb-sidenav-menu-heading">核心面板</div>
+                            <a class="nav-link collapsed" href="#" data-bs-toggle="collapse" data-bs-target="#collapseLayouts" aria-expanded="false" aria-controls="collapseLayouts">
+                                <div class="sb-nav-link-icon"><i class="fas fa-columns"></i></div>
+                                规则管理
+                                <div class="sb-sidenav-collapse-arrow"><i class="fas fa-angle-down"></i></div>
+                            </a>
+                            <div class="collapse" id="collapseLayouts" aria-labelledby="headingOne" data-bs-parent="#sidenavAccordion">
+                                <nav class="sb-sidenav-menu-nested nav">
+                                    <a class="nav-link" href="/url_rules_manage">URL规则</a>
+                                    <a class="nav-link" href="/get_rules_manage">GET规则</a>
+                                    <a class="nav-link" href="/post_rules_manage">POST规则</a>
+                                </nav>
+                            </div>
+                            <a class="nav-link collapsed" href="#" data-bs-toggle="collapse" data-bs-target="#collapsePages" aria-expanded="false" aria-controls="collapsePages">
+                                <div class="sb-nav-link-icon"><i class="fa-solid fa-chart-line"></i></div>
+                                统计分析
+                                <div class="sb-sidenav-collapse-arrow"><i class="fas fa-angle-down"></i></div>
+                            </a>
+                            <div class="collapse" id="collapsePages" aria-labelledby="headingTwo" data-bs-parent="#sidenavAccordion">
+                                <nav class="sb-sidenav-menu-nested nav">
+                                    <a class="nav-link" href="/rank/attack">攻击源排行</a>
+                                    <a class="nav-link" href="/rank/type">攻击方式排行</a>
+                                    <a class="nav-link" href="/rank/url">URL分析统计</a>
+                                </nav>
+                            </div>
+                             <a class="nav-link collapsed" href="#" data-bs-toggle="collapse" data-bs-target="#jbcz" aria-expanded="false" aria-controls="collapsePages">
+                                <div class="sb-nav-link-icon"><i class="fa-solid fa-bars"></i></div>
+                                基本操作
+                                <div class="sb-sidenav-collapse-arrow"><i class="fas fa-angle-down"></i></div>
+                            </a>
+                            <div class="collapse" id="jbcz" aria-labelledby="headingTwo" data-bs-parent="#sidenavAccordion">
+                                <nav class="sb-sidenav-menu-nested nav">
+                                    <a class="nav-link" href="/ip_prohibit">IP黑名单</a>
+                                    <a class="nav-link" href="/service_set">服务器参数</a>
+                                    <a class="nav-link" href="/database_set">数据库参数</a>
+                                    <a class="nav-link" href="/illegal_ask_set">CC参数</a>
+                                </nav>
+                            </div>
+                            <div class="sb-sidenav-menu-heading">日志查看</div>
+                            <a class="nav-link" href="/logs/pass">
+                                <div class="sb-nav-link-icon"><i class="fa-solid fa-clock"></i></div>
+                                放行日志
+                            </a>
+                            <a class="nav-link" href="/logs/block">
+                                <div class="sb-nav-link-icon"><i class="fa-brands fa-hackerrank"></i></div>
+                                拦截日志
+                            </a>
+                             <a class="nav-link" href="/logs/error">
+                                <div class="sb-nav-link-icon"><i class="fa-solid fa-bug"></i></div>
+                                程序错误日志
+                            </a>
+                            <a class="nav-link" href="/logs/user_operate">
+                                <div class="sb-nav-link-icon"><i class="fa-solid fa-user"></i></i></div>
+                                用户操作日志
+                            </a>
+                        </div>
+                    </div>
+
+                </nav>
+            </div>
+            <div id="layoutSidenav_content">
+                <main id="haha">
+                <div class="container-fluid px-4">
+                    <h1 class="mt-4">IP黑名单管理</h1>
+                        <div class="card mb-4">
+                            <div class="card-body">
+                                管理禁止访问的IP.
+                            </div>
+                        </div>
+                    <!--       自定义搜索条件区域-->
+                    <div class="fixed-table-toolbar">
+        <div class="pull-left search">
+            <input id="search-keyword" class="form-control" placeholder="请输入IP查询">
+        </div>
+
+
+        <div class="columns columns-left btn-group pull-left">
+            <button id="search-button" type="button" class="btn btn-primary">查询</button>
+        </div>
+        <div class="columns columns-left btn-group pull-left">
+            <button id="reset-button" type="button" class="btn btn-primary" onclick="clean()">重置</button>
+        </div>
+
+
+        <!-- 按钮触发模态框 -->
+        <div class="columns columns-right btn-group pull-right">
+            <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#myModal">新增IP</button>
+        </div>
+<!-- 模态框（Modal） -->
+        <form  method="post" class="form-horizontal" role="form" id="add_rules_form">
+            <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+                <div class="modal-dialog">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <button type="button" class="close" data-dismiss="modal" aria-hidden="true">
+                            &times;
+                            </button>
+                <h4 class="modal-title" id="myModalLabel">
+                    新增IP黑名单
+                </h4>
+            </div>
+<!--             模态框body-->
+             <div class="modal-body" style="height: 100%;">
+                <div class="form-group">
+                    <label for="firstname" class="col-sm-3 control-label">IP</label>
+                    <div class="col-sm-7">
+                        <input type="text" class="form-control"  name="regular"
+                               placeholder="请输入IP">
+                    </div>
+                </div>
+
+
+                <div class="form-group">
+                    <label for="firstname" class="col-sm-3 control-label">状态</label>
+                    <div class="col-sm-7">
+                        <input type="text" class="form-control"  name="status"
+                               placeholder="请输入on/off">
+                    </div>
+                </div>
+
+            </div>
+<!--           模态框底部-->
+            <div class="modal-footer">
+                <button type="button" class="btn btn-default" data-dismiss="modal" id='close_add_form'>关闭</button>
+                <input type="submit" class="btn btn-primary" value="提交"/>
+            </div>
+        </div><!-- /.modal-content -->
+    </div><!-- /.modal -->
+</div>
+
+</form>
+
+</div>
+                 <!--       bootstrap table自动渲染区域-->
+                    <table id="mytab" class="table table-hover"></table>
+
+                </div>
+                </main>
+                <footer class="py-4 bg-light mt-auto">
+                    <div class="container-fluid px-4">
+                        <div class="d-flex align-items-center justify-content-between small">
+                            <div class="text-muted">LZQWAF &copy; Website 2022</div>
+                            <div>
+                                <a href="#">Privacy Policy</a>
+                                &middot;
+                                <a href="#">Terms &amp; Conditions</a>
+                            </div>
+                        </div>
+                    </div>
+                </footer>
+            </div>
+        </div>
+
+
+    </body>
+
+
+    <script type="text/javascript" src="static/js/ip_prohibit.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" crossorigin="anonymous"></script>
+        <script src="static/js/scripts.js"></script>
+        <script src="https://cdn.jsdelivr.net/npm/simple-datatables@latest" crossorigin="anonymous"></script>
+        <script src="static/js/datatables-simple-demo.js"></script>
+</html>
